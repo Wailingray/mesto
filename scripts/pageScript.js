@@ -8,36 +8,45 @@ const authorPopup = document.querySelector(".popup_type_author");
 const cardPopup = document.querySelector(".popup_type_card");
 const imagePopup = document.querySelector(".popup_type_image");
 
-/*Функции открытия/закрытия попапа*/
-function togglePopup(popupElement) {
-  popupElement.classList.toggle("popup_opened");
+/*Функции открытия попапа*/
+function openPopup(popupElement) {
+  popupElement.classList.add("popup_opened");
+}
+
+/*Функция закрытия попапа*/
+function closePopup(popupElement) {
+  popupElement.classList.remove("popup_opened");
 }
 
 /*Функция открытия попапа изображения*/
-
 function openImagePopup() {
-  togglePopup(imagePopup);
+  openPopup(imagePopup);
+}
+
+/*Функция закрытия попапа изображения*/
+function closeImagePopup() {
+  closePopup(imagePopup);
 }
 
 /*Вешаем обработчики на кнопки попапов*/
 imageCloseButton.addEventListener("click", function () {
-  togglePopup(imagePopup);
+  closePopup(imagePopup);
 });
 
 editButton.addEventListener("click", function () {
-  togglePopup(authorPopup);
+  openPopup(authorPopup);
 });
 
 authorCloseButton.addEventListener("click", function () {
-  togglePopup(authorPopup);
+  closePopup(authorPopup);
 });
 
 addButton.addEventListener("click", function () {
-  togglePopup(cardPopup);
+  openPopup(cardPopup);
 });
 
 placeCloseButton.addEventListener("click", function () {
-  togglePopup(cardPopup);
+  closePopup(cardPopup);
 });
 
 //Submit
@@ -48,18 +57,18 @@ const authorNameInput = formElement.querySelector("#user");
 const jobInput = formElement.querySelector("#passion");
 
 // Обработчик «отправки» формы
-function authorFormSubmitHandler(evt) {
+function submitFormProfile(evt) {
   evt.preventDefault();
 
-  let authorNameValue = authorNameInput.value;
-  let authorJobValue = jobInput.value;
+  const authorNameValue = authorNameInput.value;
+  const authorJobValue = jobInput.value;
 
-  let profileName = document.querySelector(".profile__name");
-  let jobName = document.querySelector(".profile__description");
+  const profileName = document.querySelector(".profile__name");
+  const jobName = document.querySelector(".profile__description");
 
   profileName.textContent = authorNameValue;
   jobName.textContent = authorJobValue;
-  togglePopup(authorPopup);
+  closePopup(authorPopup);
 }
 
-formElement.addEventListener("submit", authorFormSubmitHandler);
+formElement.addEventListener("submit", submitFormProfile);
