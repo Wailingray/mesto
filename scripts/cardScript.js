@@ -74,10 +74,10 @@ function createCard(nameValue, imgValue) {
 /*Функция добавления новой карточки*/
 function cardFormSubmitHandler(evt) {
   evt.preventDefault();
-  const placeNameInput = cardForm.querySelector("#name");
+  const placeNameInput = cardForm.querySelector("#place");
   const picInput = cardForm.querySelector("#picture");
-  let cardName = placeNameInput.value;
-  let cardLink = picInput.value;
+  const cardName = placeNameInput.value;
+  const cardLink = picInput.value;
   placeNameInput.value = "";
   picInput.value = "";
   createCard(cardName, cardLink);
