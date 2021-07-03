@@ -1,4 +1,4 @@
-# [Проект: Место](https://wailingray.github.io/mesto-project/)
+# [Проект: Место](https://wailingray.github.io/mesto/)
 
 ## Описание проекта
 	
@@ -10,6 +10,6 @@
 
 ## Технологии
 
-HTML5 (адаптивная вёрстка), CSS3 (grid, flex), ~~JavaScript~~ 
+HTML5 (адаптивная вёрстка), CSS3 (grid, flex), JavaScript
 
 
