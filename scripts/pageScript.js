@@ -7,6 +7,8 @@ const imageCloseButton = document.querySelector(".button_type_image");
 const authorPopup = document.querySelector(".popup_type_author");
 const cardPopup = document.querySelector(".popup_type_card");
 const imagePopup = document.querySelector(".popup_type_image");
+const profileName = document.querySelector(".profile__name");
+const jobName = document.querySelector(".profile__description");
 
 /*Функции открытия попапа*/
 function openPopup(popupElement) {
@@ -59,13 +61,8 @@ const jobInput = formElement.querySelector("#passion");
 // Обработчик «отправки» формы
 function submitFormProfile(evt) {
   evt.preventDefault();
-
   const authorNameValue = authorNameInput.value;
   const authorJobValue = jobInput.value;
-
-  const profileName = document.querySelector(".profile__name");
-  const jobName = document.querySelector(".profile__description");
-
   profileName.textContent = authorNameValue;
   jobName.textContent = authorJobValue;
   closePopup(authorPopup);
