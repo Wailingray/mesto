@@ -42,9 +42,9 @@ placeCloseButton.addEventListener("click", function () {
 
 //Submit
 // Находим форму в DOM
-const formElement = document.querySelector(".popup_type_author .popup__form");
+const formElement = authorPopup.querySelector(".popup__form");
 // Находим поля формы в DOM
-const authorNameInput = formElement.querySelector("#name");
+const authorNameInput = formElement.querySelector("#user");
 const jobInput = formElement.querySelector("#passion");
 
 // Обработчик «отправки» формы
